@@ -1,4 +1,4 @@
-class PrototypeController < ApplicationController
+class PrototypesController < ApplicationController
   def index
     @prototypes = Prototype.all
   end
@@ -9,7 +9,7 @@ class PrototypeController < ApplicationController
 
   def create
     if Prototype.create(proto_params)
-      redirect_to root_path(id: @prototype.id)
+      redirect_to root_path
     else
       render :new
     end
